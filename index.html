@@ -2,42 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delhi Attendance System</title>
+
     <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbyPfuams5IVHMTQ-WTJmKGZTGZlUVu3V0Fl9PljxyaNlcWg9kzO4djYh-UZmSrNn1RJrQ/exec">
-    <title>Redirecting to Delhi Attendance System</title>
+
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #f4f4f9;
-        }
-        .loader-container {
+            background-color: #f0f2f5;
+            color: #333;
             text-align: center;
         }
-        .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #3498db;
-            border-radius: 50%;
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
             width: 40px;
             height: 40px;
+            border-radius: 50%;
+            border-left-color: #0a66c2;
             animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
+            margin-bottom: 20px;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        a { color: #3498db; text-decoration: none; font-weight: bold; }
+        a {
+            color: #0a66c2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <div class="loader-container">
-        <div class="loader"></div>
-        <p>Opening Delhi Attendance System...</p>
-        <p><small>If the page does not load, <a href="https://script.google.com/macros/s/AKfycbz-CJRg4P6b5Et6MABpXFrXGMFOEmDblNjeeYz8LeGO9Tv-Mu7NytFMNEonzWeLMewOOA/exec">click here</a>.</small></p>
-    </div>
+
+    <div class="spinner"></div>
+    <h2>Opening Delhi Attendance System...</h2>
+    <p>Loading secure environment.</p>
+    <p><small>If it doesn't open automatically, <a href="https://script.google.com/macros/s/AKfycbyPfuams5IVHMTQ-WTJmKGZTGZlUVu3V0Fl9PljxyaNlcWg9kzO4djYh-UZmSrNn1RJrQ/exec">click here</a>.</small></p>
+
+    <script>
+        window.onload = function() {
+            // Replaces the current GitHub URL with the Google Script URL instantly
+            window.location.replace("https://script.google.com/macros/s/AKfycbyPfuams5IVHMTQ-WTJmKGZTGZlUVu3V0Fl9PljxyaNlcWg9kzO4djYh-UZmSrNn1RJrQ/exec");
+        };
+    </script>
+
 </body>
 </html>
