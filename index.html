@@ -1,61 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delhi Attendance System</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaic Nexus — FeplDelhi Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbyPfuams5IVHMTQ-WTJmKGZTGZlUVu3V0Fl9PljxyaNlcWg9kzO4djYh-UZmSrNn1RJrQ/exec">
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f2f5;
-            color: #333;
-            text-align: center;
-        }
-        .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border-left-color: #0a66c2;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        a {
-            color: #0a66c2;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    /* Loading screen */
+    #loader {
+      position: fixed; inset: 0;
+      background: #0f172a;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      z-index: 999;
+      transition: opacity 0.4s ease;
+    }
+    #loader .logo {
+      font-size: 28px; font-weight: 800;
+      color: #fff; letter-spacing: 1px; margin-bottom: 8px;
+    }
+    #loader .logo span { color: #6366f1; }
+    #loader .sub {
+      font-size: 13px; color: #94a3b8; margin-bottom: 40px;
+    }
+    #loader .spinner {
+      width: 44px; height: 44px;
+      border: 4px solid rgba(99,102,241,0.2);
+      border-top-color: #6366f1;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Loading screen shown until iframe loads -->
+  <div id="loader">
+    <div class="logo">Formulaic <span>Nexus</span></div>
+    <div class="sub">FeplDelhi Smart Dashboard</div>
     <div class="spinner"></div>
-    <h2>Opening Delhi Attendance System...</h2>
-    <p>Loading secure environment.</p>
-    <p><small>If it doesn't open automatically, <a href="https://script.google.com/macros/s/AKfycbyPfuams5IVHMTQ-WTJmKGZTGZlUVu3V0Fl9PljxyaNlcWg9kzO4djYh-UZmSrNn1RJrQ/exec">click here</a>.</small></p>
+  </div>
 
-    <script>
-        window.onload = function() {
-            // Replaces the current GitHub URL with the Google Script URL instantly
-            window.location.replace("https://script.google.com/macros/s/AKfycbyPfuams5IVHMTQ-WTJmKGZTGZlUVu3V0Fl9PljxyaNlcWg9kzO4djYh-UZmSrNn1RJrQ/exec");
-        };
-    </script>
+  <!-- Replace YOUR_GAS_WEB_APP_URL with your deployed GAS URL -->
+  <iframe
+    id="appFrame"
+    src="https://script.google.com/macros/s/AKfycbyPfuams5IVHMTQ-WTJmKGZTGZlUVu3V0Fl9PljxyaNlcWg9kzO4djYh-UZmSrNn1RJrQ/exec"
+    allowfullscreen
+    allow="camera; microphone; clipboard-write"
+    onload="document.getElementById('loader').style.opacity='0';
+            setTimeout(()=>document.getElementById('loader').style.display='none', 400);">
+  </iframe>
 
 </body>
 </html>
